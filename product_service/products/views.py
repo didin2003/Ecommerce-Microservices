@@ -58,7 +58,7 @@ def update_product(request, id):
     return Response(serializer.errors, status=400)
 
 
-# 🔐 DELETE PRODUCT
+#  DELETE PRODUCT
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
 @permission_classes([IsAdminUser])

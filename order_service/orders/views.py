@@ -67,7 +67,7 @@ def create_order(request):
 @permission_classes([IsAuthenticated])
 def create_payment(request, order_id):
     try:
-        order = Order.objects.get(id=order_id, user_id=request.user.id)  # ← Bug 2 fixed
+        order = Order.objects.get(id=order_id, user_id=request.user.id)  
     except Order.DoesNotExist:
         return Response({"error": "Order not found"}, status=404)
 
@@ -89,7 +89,7 @@ def create_payment(request, order_id):
     order.save()
 
     return Response({
-        "key": settings.RAZORPAY_KEY_ID,  # ← needs Bug 1 fix in settings.py
+        "key": settings.RAZORPAY_KEY_ID,  
         "order_id": razorpay_order["id"],
         "amount": amount
     })
@@ -113,7 +113,7 @@ def verify_payment(request):
         return Response({"error": "Order not found"}, status=404)
 
     generated_signature = hmac.new(
-        settings.RAZORPAY_KEY_SECRET.encode(),  # ← needs Bug 1 fix in settings.py
+        settings.RAZORPAY_KEY_SECRET.encode(),  
         f"{razorpay_order_id}|{razorpay_payment_id}".encode(),
         hashlib.sha256
     ).hexdigest()

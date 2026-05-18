@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 import os
-import razorpay
+
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -34,7 +34,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG") == "True"
 CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL') == 'True'
-import razorpay
 
 ALLOWED_HOSTS = ["*"]
 RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")

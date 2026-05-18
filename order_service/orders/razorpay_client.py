@@ -3,7 +3,7 @@ import razorpay
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # ← add this
+load_dotenv()  
 
 client = razorpay.Client(auth=(
     os.getenv("RAZORPAY_KEY_ID"),

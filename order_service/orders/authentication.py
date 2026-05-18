@@ -15,7 +15,7 @@ class CustomJWTAuthentication(JWTAuthentication):
 
         validated_token = self.get_validated_token(raw_token)
 
-        # 👇 custom user mapping
+   
         user_id = validated_token.get("user_id")
 
         if not user_id:

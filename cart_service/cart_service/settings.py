@@ -26,8 +26,13 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG") == "True"
 ALLOWED_HOSTS = []
-CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL') == 'True'
+CORS_ALLOW_ALL_ORIGINS = True
+#CORS_ALLOW_ALL_ORIGINS = os.getenv('CORS_ALLOW_ALL') == 'True'
 
+#CORS_ALLOWED_ORIGINS = [
+#   "http://localhost:5500",
+#    "http://127.0.0.1:5500",
+#]
 # Application definition
 
 INSTALLED_APPS = [
@@ -133,14 +138,12 @@ from datetime import timedelta
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-       # 'rest_framework_simplejwt.authentication.JWTAuthentication',
         'cart.authentication.CustomJWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ]
 }
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'ALGORITHM': 'HS256',

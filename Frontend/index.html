@@ -1481,18 +1481,21 @@ async function addToCart(productId) {
             })
         });
 
-        if (!res.ok) throw new Error();
+        const data = await res.json();
+        console.log("ADD CART RESPONSE:", data);
+
+        if (!res.ok) {
+            throw new Error(data.detail || JSON.stringify(data));
+        }
 
         console.log('✅ Added to cart');
-                window.location.href = 'cart.html';
-
+        window.location.href = 'cart.html';
 
     } catch (err) {
         console.error('❌ Add to cart error:', err);
-        alert('Failed to add to cart');
+        alert(err.message);
     }
-}
-    </script>
+}    </script>
 </body>
 </html>
 

@@ -1289,7 +1289,7 @@
         if (typeof window.apiFetch !== 'function') {
             window.apiFetch = async function(endpoint) {
                 const token = localStorage.getItem('access_token');
-                const res = await fetch(`http://127.0.0.1:8001/api/auth${endpoint}`, {
+                const res = await fetch(`https://auth.didin.in/api/auth${endpoint}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if (!res.ok) throw new Error('API Error');
@@ -1382,7 +1382,7 @@
         });
 
         // Product API
-        const PRODUCT_API = 'http://127.0.0.1:8002/api/products/';
+        const PRODUCT_API = 'https://products.didin.in/api/products/';
 
         async function loadProducts() {
             try {
@@ -1453,7 +1453,7 @@
                 `;
             }
         }
-        const CART_API = 'http://127.0.0.1:8003/api/cart';
+        const CART_API = 'https://cart.didin.in/api/cart';
 
 function getToken() {
     return localStorage.getItem('access_token');

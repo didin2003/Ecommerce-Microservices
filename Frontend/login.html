@@ -466,7 +466,7 @@
                 // 🛡️ Fallback for AUTH_API if not defined
                 const API_URL = typeof AUTH_API !== 'undefined' 
                     ? AUTH_API 
-                    : (window.AUTH_API || 'http://127.0.0.1:8001/api/auth');
+                    : (window.AUTH_API || 'https://auth.didin.in/api/auth');
                 
                 const username = document.getElementById('username').value;
                 const password = document.getElementById('password').value;

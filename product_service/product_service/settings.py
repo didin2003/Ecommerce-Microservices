@@ -32,7 +32,9 @@ DEBUG = os.getenv("DEBUG") == "True"
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+CORS_ALLOW_ALL_ORIGINS = os.getenv("CORS_ALLOW_ALL") == "True"
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
 
 # Application definition
 
@@ -61,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+
 ROOT_URLCONF = 'product_service.urls'
 
 TEMPLATES = [

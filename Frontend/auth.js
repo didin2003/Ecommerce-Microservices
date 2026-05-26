@@ -1,5 +1,5 @@
 // auth.js - CLEAN VERSION (copy exactly)
-const AUTH_API = 'http://127.0.0.1:8001/api/auth';
+const AUTH_API = 'https://auth.didin.in/api/auth';
 
 function getToken() {
     return localStorage.getItem('access_token');

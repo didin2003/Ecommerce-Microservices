@@ -309,7 +309,7 @@
 
         async function loadProfile() {
             try {
-                const res = await fetch('http://127.0.0.1:8001/api/auth/profile/', { headers: { 'Authorization': `Bearer ${getToken()}` } });
+                const res = await fetch('https://auth.didin.in/api/auth/profile/', { headers: { 'Authorization': `Bearer ${getToken()}` } });
                 if (res.ok) {
                     const d = await res.json();
                     const i = (d.username || d.email || 'U').charAt(0).toUpperCase();

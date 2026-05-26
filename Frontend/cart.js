@@ -1,6 +1,6 @@
 async function loadCart() {
     try {
-        const res = await fetch('http://127.0.0.1:8003/api/cart/', {
+        const res = await fetch('https://cart.didin.in/api/cart/', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -48,7 +48,7 @@ async function loadCart() {
 }
 async function updateQty(id, action) {
     try {
-        await fetch(`http://127.0.0.1:8003/api/cart/update/${id}/`, {
+        await fetch(`https://cart.didin.in/api/cart/update/${id}/`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

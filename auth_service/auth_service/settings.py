@@ -30,9 +30,11 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv("DEBUG") == "True"
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
 
+CORS_ALLOW_ALL_ORIGINS = os.getenv("CORS_ALLOW_ALL") == "True"
 
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "").split(",")
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,7 +60,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+
 ROOT_URLCONF = 'auth_service.urls'
 AUTH_USER_MODEL = 'accounts.User'
 TEMPLATES = [

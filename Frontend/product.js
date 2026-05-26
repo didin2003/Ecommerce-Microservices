@@ -1,5 +1,5 @@
-const PRODUCT_API = 'http://127.0.0.1:8002/api/products/';
-const CART_API = 'http://127.0.0.1:8003/api/cart';
+const PRODUCT_API = 'https://products.didin.in/api/products/';
+const CART_API = 'https://cart.didin.in/api/cart';
 
 function getToken() {
     return localStorage.getItem('access_token');

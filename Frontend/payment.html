@@ -236,7 +236,7 @@
 </footer>
 
 <script>
-    const ORDER_API = 'http://127.0.0.1:8004/api/orders';
+    const ORDER_API = 'https://orders.didin.in/api/orders';
     const getToken = () => localStorage.getItem('access_token');
     const formatCurrency = (paise) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 2 }).format(paise / 100);
 

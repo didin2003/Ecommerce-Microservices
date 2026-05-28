@@ -12,5 +12,5 @@ RAZORPAY_KEY_SECRET=xxxxx
 
 ALLOWED_HOSTS=your-domain.com,localhost,127.0.0.1
 
-CORS_ALLOW_ALL=False
+CORS_ALLOW_ALL_ORIGINS=False
 CORS_ALLOWED_ORIGINS=http://localhost:3000,https://your-frontend.com

@@ -6,7 +6,7 @@ from .models import CartItem
 from .serializers import CartSerializer
 
 import requests
-PRODUCT_SERVICE_URL = "http://127.0.0.1:8002/api/products/"
+PRODUCT_SERVICE_URL = "http://product.didin.in/api/products/"
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def add_to_cart(request):

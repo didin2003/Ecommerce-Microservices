@@ -16,7 +16,7 @@ def create_order(request):
     token = request.headers.get("Authorization")
 
     res = requests.get(
-        "http://127.0.0.1:8003/api/cart/",
+        "http://cart.didin.in/api/cart/",
         headers={"Authorization": token},
         timeout=5
     )

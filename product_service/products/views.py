@@ -5,6 +5,10 @@ from .models import Product
 from .serializers import ProductSerializer
 from rest_framework.permissions import IsAdminUser
 
+@api_view(['GET'])
+def health_check(request):
+    return Response({"status": "ok"}, status=200)
+    
 # ✅ PUBLIC: anyone can view products
 @api_view(['GET'])
 @permission_classes([IsAuthenticatedOrReadOnly])

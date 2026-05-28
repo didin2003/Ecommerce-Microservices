@@ -8,6 +8,10 @@ from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import SignupSerializer
 
+@api_view(['GET'])
+def health_check(request):
+    return Response({"status": "ok"}, status=200)
+    
 # ✅ Signup
 @api_view(['POST'])
 def signup(request):

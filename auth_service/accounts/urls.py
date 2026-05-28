@@ -7,4 +7,5 @@ urlpatterns = [
     path('login/', login),
     path('refresh/', TokenRefreshView.as_view()),
     path('profile/', profile),
+    path('health/', health_check),
 ]

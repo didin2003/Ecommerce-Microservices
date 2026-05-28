@@ -14,4 +14,5 @@ urlpatterns = [
     path('create/', create_product),
     path('<int:id>/update/', update_product),
     path('<int:id>/delete/', delete_product),
+    path('health/', health_check),
 ]

@@ -10,6 +10,10 @@ from .models import Order, OrderItem
 from .razorpay_client import client
 
 
+@api_view(['GET'])
+def health_check(request):
+    return Response({"status": "ok"}, status=200)
+    
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def create_order(request):

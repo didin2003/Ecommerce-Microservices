@@ -7,6 +7,10 @@ from .serializers import CartSerializer
 
 import requests
 PRODUCT_SERVICE_URL = "http://product.didin.in/api/products/"
+@api_view(['GET'])
+def health_check(request):
+    return Response({"status": "ok"}, status=200)
+    
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def add_to_cart(request):

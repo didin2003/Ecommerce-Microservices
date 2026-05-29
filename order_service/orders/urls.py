@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import create_order, create_payment, verify_payment
+from .views import create_order, create_payment, verify_payment, health_check
 
 urlpatterns = [
     path('checkout/', create_order),

@@ -4,7 +4,8 @@ from .views import (
     product_detail,
     create_product,
     update_product,
-    delete_product
+    delete_product,
+    health_check
 )
 
 urlpatterns = [

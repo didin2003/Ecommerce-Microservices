@@ -1,6 +1,6 @@
 
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from .models import CartItem
 from .serializers import CartSerializer
@@ -13,7 +13,7 @@ def health_check(request):
     return Response({"status": "ok"}, status=200)
     
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([[AllowAny])
 def add_to_cart(request):
     user_id = request.user.id
     product_id = request.data.get('product_id')

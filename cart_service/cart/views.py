@@ -13,7 +13,7 @@ def health_check(request):
     return Response({"status": "ok"}, status=200)
     
 @api_view(['POST'])
-@permission_classes([[AllowAny])
+@permission_classes([AllowAny])
 def add_to_cart(request):
     user_id = request.user.id
     product_id = request.data.get('product_id')

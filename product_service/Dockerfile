@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["gunicorn", "auth_service.wsgi:application", "--bind", "0.0.0.0:8002"]
+CMD ["gunicorn", "product_service.wsgi:application", "--bind", "0.0.0.0:8002"]

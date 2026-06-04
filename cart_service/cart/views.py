@@ -6,7 +6,7 @@ from .models import CartItem
 from .serializers import CartSerializer
 
 import requests
-PRODUCT_SERVICE_URL = "http://product.didin.in/api/products/"
+PRODUCT_SERVICE_URL = "http://products.didin.in/api/products/"
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def health_check(request):
